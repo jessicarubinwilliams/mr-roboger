@@ -1,0 +1,31 @@
+_Behavior - The program should handle: inputs that aren't numbers_
+_Input Example - When it receives: "hello"_
+_Output Example - It should return: "Please enter a number"_
+
+_Behavior - The program should handle: numbers that contains a 1_
+_Input Example - When it receives: 1_
+_Output Example - It should return: "Beep!"_
+
+_Behavior - The program should handle: numbers that contain a 2_
+_Input Example - When it receives: 2_
+_Output Example - It should return: "Beep!", "Boop!"_
+
+_Behavior - The program should handle: numbers that contain a 3_
+_Input Example - When it receives: 3_
+_Output Example - It should return: "Beep!", "Boop!", "Won't you be my neighbor?"_
+
+_Behavior - The program should handle: numbers that contain 1 and 2_
+_Input Example - When it receives: 12_
+_Output Example - It should return: "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 7, 9, 10, "Beep", "Boop"_
+
+_Behavior - The program should handle: numbers that contain 1 and 3_
+_Input Example - When it receives: 13_
+_Output Example - It should return: "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 7, 9, 10, "Beep", "Boop", "Won't you be my neighbor?"_
+
+_Behavior - The program should handle: numbers that contain 2 and 3_
+_Input Example - When it receives: 23_
+_Output Example - It should return: "Beep!", "Boop!", "Won't you be my neighbor?", 4, 5, 6, 7, 7, 9, 10, "Beep", "Boop", "Won't you be my neighbor?", "Beep", "Beep", "Beep", "Beep", "Beep", "Beep", "Boop!", "Boop!", "Boop!", "Won't you be my neighbor?"_
+
+_Behavior - The program should handle: Multiple uses_
+_Input Example - When it receives: A new user entry_
+_Output Example - It should return: A new result and hide the previous result_
