@@ -227,3 +227,51 @@ arrayOfThingsILike.forEach(function(thing) {
   thingsILike = thingsILike.concat(" " + thing + "!");
 });
 thingsILike;
+
+for...of Loops
+
+Use: If we are using a loop that isn't iterating through an entire array (i.e. if we want to stop the loop) but want to avoid the possible OBOEs of for Loops. Can stop the loop with either a break; statement or a return statement.
+Double numbers from an array and populate them into a new array with for...of Loops
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (const element of array) {
+  doubledArray.push(element * 2);
+}
+doubledArray;
+
+Double numbers from an array and populate them into a new array but don’t iterate through the entire array with for...of Loops
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (const element of array) {
+  doubledArray.push(element * 2);
+  console.log("Never mind!");
+  break;
+}
+doubledArray;
+
+Compared to .map()
+
+const array = [0,1,2,3,4,5];
+const doubledArray = array.map(function(element) {
+  return element * 2;
+});
+doubledArray;
+
+Compared to for Loop
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
+
+Compared to .forEach()
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length - 1; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
