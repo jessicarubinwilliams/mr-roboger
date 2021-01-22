@@ -42,13 +42,9 @@ _Create a web application that takes a number from a user and returns a range of
 
 ## Specifications
 
-_Behavior_
-_Input Example_
-_Output Example_
-
-_The program should handle:_
-_When it receives:_
-_It should return:_
+_Behavior - The program should handle:_
+_Input Example - When it receives:_
+_Output Example - It should return:_
 
 
 ## Tests
