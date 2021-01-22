@@ -1,0 +1,229 @@
+.forEach() Loops
+
+Use: when we want to loop through every element in an array
+
+Double numbers from an array and then log the doubled value to the console with .forEach()
+const array = [0,1,2,3,4,5];
+array.forEach(function(number) { 
+  console.log(number * 2);
+});
+
+The return value of an Array.prototype.forEach() loop is undefined. We can't just store the results of Array.prototype.forEach() in a variable.
+
+Double numbers from an array and store the return values of each element in a new array with .forEach()
+
+Create another variable to hold the doubled values. Then use the loop to put the doubled values in the array. If we want to modify all the elements in an array using this kind of loop, this is how to do it. Another, cleaner way to modify and save elements of an array into a new array is Array.prototype.map().
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+array.forEach(function(element) {
+  doubledArray.push(element * 2);
+});
+doubledArray;
+
+Add all the elements in the array with .forEach()
+
+Whenever we want to initialize a variable that adds things together, we'll usually start at 0.
+//sum += element;   is the same as   sum = sum + element;   is the same as   newSum = oldSum + element;//
+
+const array = [0,1,2,3,4,5];
+let sum = 0;
+array.forEach(function(element) {
+  sum += element;
+});
+sum;
+
+Append to a string with .forEach()
+
+Often, we will initialize with an empty string "", but in this case, we have a string we want to start with. Because `String.prototype.concat() is not a destructive method, we have to save it in a variable.
+
+let thingsILike = "I like...";
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+arrayOfThingsILike.forEach(function(thing) {
+  thingsILike = thingsILike.concat(" " + thing + "!");
+});
+thingsILike;
+
+Run jQuery code and modify the DOM with .forEach()
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+arrayOfThingsILike.forEach(function(thing) {
+  $("#likable-things").append(" " + thing + "!")
+});
+
+for Loops
+
+Use: If we are using a loop that isn't iterating through an entire array (i.e. if we want to stop the loop)
+
+Unlike Array.prototype.forEach(), a for loop isn't called on an array.
+
+Syntax of a for loop. This is pseudocode!
+// Pseudocode alert!
+
+for (let index = startingValue; index <= endingValue; index += increment ) {
+  // Code that should run each time through the loop!
+}
+
+The for statement takes three parameters: initialization, condition, and final expression.
+
+The initialization parameter is the starting value of the loop. In the example above, we called it startingValue. index is a variable we initialize with our starting value. Very often, that starting value is 0 or 1, but depending on your use case, it could be any number.
+
+The initialization parameter is executed before the loop runs. Because the initialization loop is a variable that changes, we need to use let with it. const will not work. If we omit let, we are accidentally scoping the value of index globally - a very bad idea, especially if there are other for loops using index in the codebase.
+
+The condition parameter tells the loop when to stop running - or more accurately when to keep running. The loop will stop when the condition is no longer true. In our example, when the index variable is NOT less than or equal to 3, the loop will stop. Until then, it will keep going. The condition is evaluated every time the loop runs. We can use other operators to denote this depending on how our loop works, including <, >, and >=.
+
+The final expression parameter usually changes the value of index by incrementing or decrementing it. In our example, the index variable will be increased by 1 after each time the loop is executed.
+
+Each time the loop runs, the code within the loop will log the value of index.
+
+Note that each parameter has a semi-colon as a separator. A for loop will not work without these separators.
+
+Log the value of index with for Loop
+
+for (let index = 1; index <= 3; index += 1) {
+  console.log(index);
+}
+
+Double numbers from an array and store the return values of each element in a new array with for Loop
+
+Note that the index starts at 0, not 1. If we are looping through an entire array, the index starts at 0 because the index of the first element in an array is 0.
+
+The condition parameter is   index < array.length;   which is the same as   index <= array.length - 1. Remember, because the index of the first element in an array is 0 instead of 1, the index of the final element in an array will always be one less than the array's length.
+
+Finally, we increment the index by 1 each time an iteration through the loop is finished.
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
+
+Compared to .forEach()
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length - 1; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
+
+Add all the elements in the array with for Loop with an array
+
+let total = 0;
+const summands = [1, 2, 3, 4, 5];
+for (let index = 0; index < summands.length; index += 1) {
+  total += summands[index];
+}
+total
+
+Add all the elements in the array with for Loop without an array
+
+let total = 0;
+for (let currentNumber = 1; currentNumber <= 5; currentNumber += 1) {
+  total += currentNumber;
+}
+total
+
+Compared to .forEach()
+
+const array = [0,1,2,3,4,5];
+let sum = 0;
+array.forEach(function(element) {
+  sum += element;
+});
+sum;
+
+Append to a string with for Loop
+
+let thingsILike = "I like...";
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+for (let i = 0; i < arrayOfThingsILike.length; i+=1) {
+  thingsILike = thingsILike.concat(" " + arrayOfThingsILike[i] + "!");
+}
+thingsILike;
+
+Compared to .forEach()
+
+let thingsILike = "I like...";
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+arrayOfThingsILike.forEach(function(thing) {
+  thingsILike = thingsILike.concat(" " + thing + "!");
+});
+thingsILike;
+
+Stop the loop when comparison achieved with for Loop
+
+function dnaPatternDetector(dnaSequence, pattern) {
+  for (let i = 0; i < dnaSequence.length; i +=1) {
+    if (dnaSequence[i] === pattern) {
+      return true;
+    };
+    console.log("Looped!");
+  }
+  return false;
+}
+const sequence = ["X", "A", "Y", "M", "D"];
+const pattern1 = "A";
+const pattern2 = "Z";
+dnaPatternDetector(sequence, pattern1);
+dnaPatternDetector(sequence, pattern1);
+
+.map() Loops
+
+Use: iterate - to copy and transform the array being looped over. It creates a new array with modified elements. No need to first initialize a new array and then push modified elements into it.
+
+Can’t Use: Returns a transformed array. Can't use it to sum the values of an array.--use Array.prototype.reduce() for summing the values of an array.
+
+Double numbers from an array and populate them into a new array with .map()
+
+Don’t need to initialize an empty array. Save the results inside a variable. Must use a return statement.
+
+const array = [0,1,2,3,4,5];
+const doubledArray = array.map(function(element) {
+  return element * 2;
+});
+doubledArray;
+
+Compared to for Loop
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
+
+Compared to .forEach()
+
+const array = [0,1,2,3,4,5];
+let doubledArray = [];
+for (let index = 0; index < array.length - 1; index +=1) {
+  doubledArray.push(array[index] * 2);
+}
+doubledArray;
+
+Append to a string with .map()
+
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+const thingsILike = arrayOfThingsILike.map(function(thing) {
+  return "I like " + thing + "!";
+});
+thingsILike.join(" ");
+
+Compared to for Loop
+
+let thingsILike = "I like...";
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+for (let i = 0; i < arrayOfThingsILike.length; i+=1) {
+  thingsILike = thingsILike.concat(" " + arrayOfThingsILike[i] + "!");
+}
+thingsILike;
+
+Compared to .forEach()
+
+let thingsILike = "I like...";
+const arrayOfThingsILike = ["bubble baths", "kittens", "good books", "clean code"];
+arrayOfThingsILike.forEach(function(thing) {
+  thingsILike = thingsILike.concat(" " + thing + "!");
+});
+thingsILike;
