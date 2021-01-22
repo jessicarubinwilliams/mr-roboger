@@ -1,7 +1,3 @@
-_Behavior - The program should handle: inputs that aren't numbers_
-_Input Example - When it receives: "hello"_
-_Output Example - It should return: "Please enter a number"_
-
 _Behavior - The program should handle: numbers that contains a 1_
 _Input Example - When it receives: 1_
 _Output Example - It should return: "Beep!"_
@@ -29,3 +25,7 @@ _Output Example - It should return: "Beep!", "Boop!", "Won't you be my neighbor?
 _Behavior - The program should handle: Multiple uses_
 _Input Example - When it receives: A new user entry_
 _Output Example - It should return: A new result and hide the previous result_
+
+_Behavior - The program should handle: inputs that aren't numbers_
+_Input Example - When it receives: "hello" or " " or "@#$@#$"_
+_Output Example - It should return: "Please enter a number."_
