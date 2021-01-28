@@ -2,18 +2,23 @@
 // _Test-1: "It verifies there is input"
 // _Expect(verifyInput("")).toEqual(false)
 
+// _Test-2: "It verifies input is a number"
+// _Expect(verifies"hello".toEqual(false)
+
 function verifyInput(input) {
   if (input != "") {
     console.log("Please enter a number");
     return false;
+  } else if (Number.isFinite(parseInt(input)) === false ) {
+    console.log("For this to work, your entry needs to be a number.");
+    return false;
   }
 };
-verifyInput();
+verifyInput("hello");
 
 
 
-// _Test-2: "It verifies input is a number"
-// _Expect(verifies"hello".toEqual(false)
+
 
 // _Describe: increment()_
 // _Test-1: "It parses input to a number and increments a numbersArray of numbers from one to input"
