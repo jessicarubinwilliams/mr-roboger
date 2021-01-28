@@ -16,13 +16,23 @@ function verifyInput(input) {
 };
 verifyInput("hello");
 
-
-
-
-
 // _Describe: increment()_
 // _Test-1: "It parses input to a number and increments a numbersArray of numbers from one to input"
 // _Expect(increment("4")).toEqual([1, 2, 3, 4])
+
+let numbersArray = [];
+function increment(input) {
+  inputNumber = parseInt(input);
+  for (let i = 1; i = inputNumber; i++) {
+    numbersArray.push(i)
+  }  
+};
+increment(4);
+
+
+
+
+
 
 // _Describe: substitute()_
 // _Test-1: "It iterates through numbersArray and stringifies the numbers"
