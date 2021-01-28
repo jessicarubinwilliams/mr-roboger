@@ -65,8 +65,7 @@ _Expect([["Beep!"], ["Boop!"], ["Won't you be my neighbor?"]]).toEqual()
 
 ## Known Bugs
 
-* _Any known issues_
-* _should go here_
+* _This is a project in development and not yet working_
 
 ## License
 *[MIT](https://choosealicense.com/licenses/mit/)*
