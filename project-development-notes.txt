@@ -24,3 +24,36 @@ _Expect (yourFunctionName(secondInput)).toEqual(newOutput);_
 _Describe: numberIdentifier()_
 _Test: "It recognizes when input is not a number and prompts user for a number"_
 _Expect (yourFunctionName("hello")).toEqual("Please enter a number.");_
+
+1. Check there is input. (input.length > 0, or input != "")
+2. Check input is a number (use !isNaN() or isFinite())
+(1.b & 2.b) return error
+3. Before converting num, increment output from 1 to the num, make array of numbers, then loop through it, use #4 to convert.
+
+const outputArray = []
+for (let i = 1; i = userInput; i++) {
+  myArray.push(i)
+}
+
+
+4. Turn each number (element) within outputArray into a string and put each string into an additional Array
+
+5. Loop through array, until reaching a 3, 2, or 1, then break. -- What happens if the user enters 13. Other methods.... instead of looping through array of digits, "123".includes("3") ?
+/[3]/g.test("123")
+
+Convert based on 3,2,1 else turn string back into a number
+
+Turn entire outputArray into a outputString
+
+dynamically output the outputString to the html output div
+
+
+function verifyInput
+1. Is there input
+2. Is it a number
+
+function increment
+
+function substitute  
+
+function constructOutput 
