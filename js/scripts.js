@@ -73,7 +73,7 @@ RETURNS: "Nice number."
 let numbersArray = [];
 function increment(input) {
   inputNumber = parseInt(input);
-  for (let i = 1; i = inputNumber; i++) {
+  for (let i = 0; i = inputNumber; i++) {
     numbersArray.push(i)
   }  
 };
