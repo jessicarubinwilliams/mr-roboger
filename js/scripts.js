@@ -1,3 +1,5 @@
+// Business Logic
+
 // _Describe: verifyInput()_
 // _Test-1: "It verifies there is input"
 // _Expect(verifyInput("")).toEqual(false)
@@ -5,7 +7,7 @@
 // _Test-2: "It verifies input is a number"
 // _Expect(verifies"hello".toEqual(false)
 
-// BROKEN
+// BROKEN attempts to fix below
 // function verifyInput(input) {
 //   if (input != "") {
 //     console.log("Please enter a number");
@@ -24,7 +26,7 @@
 // "Please enter a number"
 
 
-// ALSO BROKEN
+// STILL BROKEN attempt to fix below
 // function verifyInput(input) {
 //   if (input) {
 //     if (input !== "")
@@ -46,6 +48,7 @@
 // "Please enter a number"
 // "Please enter a number"
 
+// STILL BROKEN this is most recent attempt to fix
 function verifyInput(input) {
   if (input) 
     if (Number.isFinite(parseInt(input)) === false ) {
@@ -59,30 +62,26 @@ function verifyInput(input) {
     return false;
   }
 };
-verifyInput();
-RETURNS: NOTHING
-verifyInput("hello");
-RETURNS: "For this to work, your entry needs to be a number."
-verifyInput("7");
-RETURNS: "Nice number."
+// verifyInput();
+// RETURNS: NOTHING
+// verifyInput("hello");
+// RETURNS: "For this to work, your entry needs to be a number."
+// verifyInput("7");
+// RETURNS: "Nice number."
 
 // _Describe: increment()_
 // _Test-1: "It parses input to a number and increments a numbersArray of numbers from one to input"
 // _Expect(increment("4")).toEqual([1, 2, 3, 4])
 
-let numbersArray = [];
-function increment(input) {
-  inputNumber = parseInt(input);
-  for (let i = 0; i = inputNumber; i++) {
-    numbersArray.push(i)
-  }  
-};
-increment(4);
-
-
-
-
-
+// BROKEN no attempts to fix yet
+// let numbersArray = [];
+// function increment(input) {
+//   inputNumber = parseInt(input);
+//   for (let i = 0; i = inputNumber; i++) {
+//     numbersArray.push(i)
+//   }  
+// };
+// increment(4);
 
 // _Describe: substitute()_
 // _Test-1: "It iterates through numbersArray and stringifies the numbers"
@@ -93,3 +92,15 @@ increment(4);
 
 // _Test-3: "It stringifies numbersArray into outputString"
 // _Expect([["Beep!"], ["Boop!"], ["Won't you be my neighbor?"]]).toEqual()
+
+// User Interface Logic  
+$(document).ready(function() {
+  $("#formOne").submit(function(event) {
+    const userInput = $("input#inputNumber").val();
+    verifyInput(userInput);
+    
+    // $("div#output").show();
+
+    event.preventDefault();
+  });
+});
