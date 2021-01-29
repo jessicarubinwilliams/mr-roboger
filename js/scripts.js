@@ -5,16 +5,66 @@
 // _Test-2: "It verifies input is a number"
 // _Expect(verifies"hello".toEqual(false)
 
+// BROKEN
+// function verifyInput(input) {
+//   if (input != "") {
+//     console.log("Please enter a number");
+//     return false;
+//   } else if (Number.isFinite(parseInt(input)) === false ) {
+//     console.log("For this to work, your entry needs to be a number.");
+//     return false;
+//   }
+// };
+// verifyInput();
+// verifyInput("hello");
+// verifyInput("7");
+// RETURNS:
+// "Please enter a number"
+// "Please enter a number"
+// "Please enter a number"
+
+
+// ALSO BROKEN
+// function verifyInput(input) {
+//   if (input) {
+//     if (input !== "")
+//     console.log("Please enter a number");
+//     return false;
+//   } else if (Number.isFinite(parseInt(input)) === false ) {
+//     console.log("For this to work, your entry needs to be a number.");
+//     return false;
+//   } else {
+//   console.log("Nice number.")
+//     return true;
+//   }
+// };
+// verifyInput();
+// verifyInput("hello");
+// verifyInput("7");
+// RETURNS:
+// "For this to work, your entry needs to be a number."
+// "Please enter a number"
+// "Please enter a number"
+
 function verifyInput(input) {
-  if (input != "") {
-    console.log("Please enter a number");
-    return false;
-  } else if (Number.isFinite(parseInt(input)) === false ) {
+  if (input) 
+    if (Number.isFinite(parseInt(input)) === false ) {
     console.log("For this to work, your entry needs to be a number.");
+    return false;
+  } else if (Number.isFinite(parseInt(input)) === true ) {
+    console.log("Nice number.");
+    return true;
+  }  else {
+    console.log("Please enter a number.")
     return false;
   }
 };
+verifyInput();
+RETURNS: NOTHING
 verifyInput("hello");
+RETURNS: "For this to work, your entry needs to be a number."
+verifyInput("7");
+RETURNS: "Nice number."
 
 // _Describe: increment()_
 // _Test-1: "It parses input to a number and increments a numbersArray of numbers from one to input"
