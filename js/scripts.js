@@ -21,7 +21,8 @@ function robogerize(input) {
       return string;
     }
   });
-  return roboArray;
+  const roboString = roboArray.join(", ");
+  return roboString;
 };
 
 // User Interface Logic  
