@@ -36,10 +36,6 @@ _Create a web application that takes a number from a user and returns a range of
 * _Navigate to the top level of the repository with the command `$ cd mr-roboger`_
 * _Open index.html in the browser of your choice with the command `$ open index.html`_.
 
-<!-- _Alternatively,_
-
-* _Direct your browser to a [live version on GitHub Pages.] (jessicarubinwilliams.github.io/mr-roboger/index.html)_ -->
-
 ## Tests
 
 _Describe: robogerize()_
@@ -54,6 +50,9 @@ _Expect(substitute(4)).toEqual(["0", "1", "2", "3", "4"])_
 
 _Test-4: It iterates through numbersArray and after stringification, it assesses whether the elements contain, with priority, '3', '2', or '1' and substitutes for any element containing a 3 - 'Won't you be my neighbor?',for any element without a '3' but containing a '2' - 'Boop!', for any element without a '3' or '2' but containing a '1'  - 'Beep'", and for any element without a '3', '2', or '1' parses string back to a number"_ 
 _Expect(substitute(4)).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", 4])_
+
+_Test-5: "It turns roboArray into a string"_
+_Expect(substitute(4)).toEqual("0, Beep!, Boop!, Won't you be my neighbor?, 4")_
 
 ## Known Bugs
 
