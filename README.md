@@ -42,13 +42,6 @@ _Create a web application that takes a number from a user and returns a range of
 
 ## Tests
 
-_Describe: verifyInput()_
-_Test-1: "It verifies there is input"
-_Expect(verifyInput("")).toEqual(false)
-
-_Test-2: "It verifies input is a number"
-_Expect(verifies"hello".toEqual(false)
-
 _Describe: increment()_
 _Test-1: "It parses input to a number and increments a numbersArray of numbers from zero to input"
 _Expect(increment("4")).toEqual([0, 1, 2, 3, 4])
