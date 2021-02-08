@@ -43,18 +43,21 @@ _Create a web application that takes a number from a user and returns a range of
 ## Tests
 
 _Describe: increment()_
-_Test-1: "It parses input to a number and increments a numbersArray of numbers from zero to input"
-_Expect(increment("4")).toEqual([0, 1, 2, 3, 4])
+_Test-1: "It parses input to a number "_
+_Expect(increment("4")).toEqual(4)_
+
+_Test-2: "It increments a numbersArray of numbers from zero to input"_
+_Expect(increment("4")).toEqual([0, 1, 2, 3, 4])_
 
 _Describe: substitute()_
-_Test-1: "It iterates through numbersArray and stringifies the numbers"
-_Expect(substitute(4)).toEqual(["0", "1", "2", "3", "4"])
+_Test-1: "It iterates through numbersArray and stringifies the numbers"_
+_Expect(substitute(4)).toEqual(["0", "1", "2", "3", "4"])_
 
-_Test-2: It iterates through numbersArray and after stringification, it assesses whether the strings contain, with priority, '3', '2', or '1' and substitutes for any subArray containing a 3 - 'Won't you be my neighbor?',for any subArray without a '3' but containing a '2' - 'Boop!', for any subArray without a '3' or '2' but containing a '1'  - 'Beep'", and for any subArray without a '3', '2', or '1' parses string back to a number" 
-_Expect(substitute(4)).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", 4])
+_Test-2: It iterates through numbersArray and after stringification, it assesses whether the strings contain, with priority, '3', '2', or '1' and substitutes for any subArray containing a 3 - 'Won't you be my neighbor?',for any subArray without a '3' but containing a '2' - 'Boop!', for any subArray without a '3' or '2' but containing a '1'  - 'Beep'", and for any subArray without a '3', '2', or '1' parses string back to a number"_ 
+_Expect(substitute(4)).toEqual(["0", "Beep!", "Boop!", "Won't you be my neighbor?", 4])_
 
-_Test-3: "It stringifies numbersArray into outputString"
-_Expect([["0"], ["Beep!"], ["Boop!"], ["Won't you be my neighbor?"]]).toEqual()
+_Test-3: "It stringifies numbersArray into outputString"_
+_Expect([["0"], ["Beep!"], ["Boop!"], ["Won't you be my neighbor?"]]).toEqual()_
 
 ## Known Bugs
 
