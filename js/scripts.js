@@ -10,14 +10,15 @@
 // let numbersArray = [];
 function increment(input) {
   inputNumber = parseInt(input);
-  return inputNumber;
+  for (let index = 0; index <= inputNumber; index++) {
+    numbersArray.push(index)
+  }  
 };
 // increment("4");
-// returns: 4
+// numbersArray;
+// returns: (5) [0, 1, 2, 3, 4]
 
-// for (let i = 0; i = inputNumber; i++) {
-//   numbersArray.push(i)
-// }  
+
 
 
 // User Interface Logic  
