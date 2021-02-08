@@ -7,7 +7,6 @@ function increment(input) {
     numbersArray.push(index)
   }  
 };
-increment("13");
 
 const stringifiedArray = numbersArray.map(function(number) {
   return number.toString();
@@ -24,16 +23,21 @@ const roboArray = stringifiedArray.map (function(string) {
     return string;
   }
 });
-roboArray;
 
 // User Interface Logic  
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
-    const userInput = $("input#inputNumber").val();
-    
-    // $("div#output").show();
 
-    
+    const userInput = $("input#inputNumber").val();
+    increment(userInput);
+    console.log(userInput); //works
+    console.log(numbersArray); //works
+    stringifiedArray;  //how does one call a loop assigned to a constant?
+    console.log(stringifiedArray) //broken--logs an empty array; everything after this broken too.
+    roboArray;
+
+    $("div#output").show();
+    $("div#output").append(roboArray)
   });
 });
