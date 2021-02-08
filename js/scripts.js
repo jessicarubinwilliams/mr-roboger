@@ -12,11 +12,11 @@ function robogerize(input) {
   });
   const roboArray = stringifiedArray.map (function(string) {
     if  (string.includes("3") === true) {
-      return string = "Won't you be my neighbor?";
+      return string = "\"Won't you be my neighbor?\"";
     } if (string.includes("2") === true) {
-      return string = "Boop!";
+      return string = "\"Boop!\"";
     } if (string.includes("1") === true) {
-      return string = "Beep!";
+      return string = "\"Beep!\"";
     } else {
       return string;
     }
@@ -29,10 +29,7 @@ function robogerize(input) {
 $(document).ready(function() {
   $("#formOne").submit(function(event) {
     event.preventDefault();
-
-    const userInput = $("input#inputNumber").val();
-    
-
+    const userInput = $("input#inputNumber").val();    
     $("div#output").show();
     $("div#output").text(robogerize(userInput))
   });
